@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1148,5105.33333333333" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1153.33333333333,5245.33333333333" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="62">
       <x:String>System.Activities</x:String>
@@ -69,9 +69,10 @@
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.ServiceModel</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="1158,4940.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
+  <Sequence DisplayName="Data Scraping" sap:VirtualizedContainerService.HintSize="1158,5080.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_12">
     <Sequence.Variables>
       <Variable x:TypeArguments="ui:Browser" Name="browser_ToUse" />
       <Variable x:TypeArguments="x:String" Name="pageLoad" />
@@ -95,13 +96,13 @@
         <InArgument x:TypeArguments="s:String[]">[{"Smartphones", "Watches", "Cameras"}]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Amazon.com" sap:VirtualizedContainerService.HintSize="1116,4495.33333333333" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[browser_ToUse]" Url="https://www.amazon.com/">
+    <ui:OpenBrowser CommunicationMethod="{x:Null}" Hidden="{x:Null}" NewSession="{x:Null}" Private="{x:Null}" BrowserType="Edge" DisplayName="Open Amazon.com" sap:VirtualizedContainerService.HintSize="1116,4635.33333333333" sap2010:WorkflowViewState.IdRef="OpenBrowser_1" UiBrowser="[browser_ToUse]" Url="https://www.amazon.com/">
       <ui:OpenBrowser.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1082,4392.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="1082,4532.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_13">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -200,13 +201,13 @@
                 </Sequence>
               </ui:InterruptibleDoWhile.Body>
             </ui:InterruptibleDoWhile>
-            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Item in Product List" sap:VirtualizedContainerService.HintSize="1040,3332" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[product_Collection]">
+            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each Item in Product List" sap:VirtualizedContainerService.HintSize="1040,3472" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[product_Collection]">
               <ui:ForEach.Body>
                 <ActivityAction x:TypeArguments="x:String">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="x:String" Name="item" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1003.33333333333,3196.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="1003.33333333333,3336.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_15">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="final_DT" />
                     </Sequence.Variables>
@@ -250,7 +251,7 @@
                         </Sequence>
                       </ui:InterruptibleDoWhile.Body>
                     </ui:InterruptibleDoWhile>
-                    <Sequence DisplayName="Data Fetching and Finalising" sap:VirtualizedContainerService.HintSize="961.333333333333,2533.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                    <Sequence DisplayName="Data Fetching and Finalising" sap:VirtualizedContainerService.HintSize="961.333333333333,2673.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_34">
                       <Sequence.Variables>
                         <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
                         <Variable x:TypeArguments="x:String" Name="pageLoad" />
@@ -264,21 +265,21 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                       <ui:BuildDataTable DataTable="[final_DT]" DisplayName="Build Data Table For holding Final Lits of 20 Items" sap:VirtualizedContainerService.HintSize="919.333333333333,58.6666666666667" sap2010:WorkflowViewState.IdRef="BuildDataTable_2" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Product_x0020_Name&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Price&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Ratings&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-                      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Edge" DisplayName="Amazon Homepage" sap:VirtualizedContainerService.HintSize="919.333333333333,2342.66666666667" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="167e8ef4df46d362753a9baa71b3f8f9" Selector="&lt;html app='msedge.exe' htmlwindowname='*' title='Amazon.com*' /&gt;" UiBrowser="[browser_ToUse]">
+                      <ui:BrowserScope Browser="{x:Null}" SearchScope="{x:Null}" TimeoutMS="{x:Null}" BrowserType="Edge" DisplayName="Amazon Homepage" sap:VirtualizedContainerService.HintSize="919.333333333333,2482.66666666667" sap2010:WorkflowViewState.IdRef="BrowserScope_2" InformativeScreenshot="167e8ef4df46d362753a9baa71b3f8f9" Selector="&lt;html app='msedge.exe' htmlwindowname='*' title='Amazon.com*' /&gt;" UiBrowser="[browser_ToUse]">
                         <ui:BrowserScope.Body>
                           <ActivityAction x:TypeArguments="x:Object">
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="x:Object" Name="ContextTarget" />
                             </ActivityAction.Argument>
-                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="885.333333333333,2196.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                            <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="885.333333333333,2336.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_32">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
-                              <ui:InterruptibleDoWhile Condition="[final_DT.Rows.Count &lt;= 20]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="843.333333333333,1888" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_9">
+                              <ui:InterruptibleDoWhile DisplayName="Do While" sap:VirtualizedContainerService.HintSize="843.333333333333,1926" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_9">
                                 <ui:InterruptibleDoWhile.Body>
-                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="806.666666666667,1718.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="806.666666666667,1756.66666666667" sap2010:WorkflowViewState.IdRef="Sequence_31">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -313,7 +314,7 @@
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <If Condition="[final_DT.Rows.Count &lt;= 20]" sap:VirtualizedContainerService.HintSize="484,210.666666666667" sap2010:WorkflowViewState.IdRef="If_4">
+                                                  <If Condition="[final_DT.Rows.Count &lt; 20]" sap:VirtualizedContainerService.HintSize="484,210.666666666667" sap2010:WorkflowViewState.IdRef="If_4">
                                                     <If.Then>
                                                       <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{row(&quot;Product Name&quot;).ToString,row(&quot;Price&quot;).ToString,row(&quot;Ratings&quot;).ToString}]" DataTable="[final_DT]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="200,22" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
                                                     </If.Then>
@@ -328,9 +329,9 @@
                                         </ActivityAction>
                                       </ui:ForEachRow.Body>
                                     </ui:ForEachRow>
-                                    <If Condition="[final_DT.Rows.Count &lt; 20]" sap:VirtualizedContainerService.HintSize="764.666666666667,746" sap2010:WorkflowViewState.IdRef="If_6">
+                                    <If Condition="[final_DT.Rows.Count &lt; 20]" sap:VirtualizedContainerService.HintSize="764.666666666667,784" sap2010:WorkflowViewState.IdRef="If_6">
                                       <If.Then>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="454.666666666667,595.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                                        <Sequence sap:VirtualizedContainerService.HintSize="454.666666666667,633.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_30">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -355,20 +356,20 @@
                                               </ui:Target>
                                             </ui:Click.Target>
                                           </ui:Click>
-                                          <ui:InterruptibleDoWhile Condition="[NOT (pageLoad.ToString.ToUpper.Trim.Equals(&quot;COMPLETE&quot;))]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="412.666666666667,357.333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_8">
+                                          <ui:InterruptibleDoWhile Condition="[NOT (pageLoad.ToString.ToUpper.Trim.Equals(&quot;COMPLETE&quot;))]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="412.666666666667,395.333333333333" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_8">
                                             <ui:InterruptibleDoWhile.Body>
-                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,188" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,226" sap2010:WorkflowViewState.IdRef="Sequence_29">
                                                 <sap:WorkflowViewStateService.ViewState>
                                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                   </scg:Dictionary>
                                                 </sap:WorkflowViewStateService.ViewState>
-                                                <ui:InjectJsScript InputParameter="{x:Null}" DisplayName="Inject Js Script" sap:VirtualizedContainerService.HintSize="334,96" sap2010:WorkflowViewState.IdRef="InjectJsScript_5" ScriptCode="Loading.js">
+                                                <ui:InjectJsScript InputParameter="{x:Null}" DisplayName="Inject Js Script 'Intermediate D3D Window'" sap:VirtualizedContainerService.HintSize="334,134" sap2010:WorkflowViewState.IdRef="InjectJsScript_5" ScriptCode="Loading.js">
                                                   <ui:InjectJsScript.ScriptOutput>
                                                     <OutArgument x:TypeArguments="x:String">[pageLoad]</OutArgument>
                                                   </ui:InjectJsScript.ScriptOutput>
                                                   <ui:InjectJsScript.Target>
-                                                    <ui:Target ClippingRegion="{x:Null}" Selector="{x:Null}" Element="[browser_ToUse]" Id="24e0d0ef-94e4-4d16-95a3-bda17e29fb75">
+                                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Selector="{x:Null}" Id="24e0d0ef-94e4-4d16-95a3-bda17e29fb75" InformativeScreenshot="b3f18e313cac2d57c49229664790a04c">
                                                       <ui:Target.TimeoutMS>
                                                         <InArgument x:TypeArguments="x:Int32" />
                                                       </ui:Target.TimeoutMS>
@@ -386,9 +387,20 @@
                                     </If>
                                   </Sequence>
                                 </ui:InterruptibleDoWhile.Body>
+                                <ui:InterruptibleDoWhile.Condition>
+                                  <mva:VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="final_DT.Rows.Count &lt; 20" />
+                                </ui:InterruptibleDoWhile.Condition>
                               </ui:InterruptibleDoWhile>
-                              <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Ratings" DataTable="[final_DT]" DisplayName="Sorting based on Ratings" sap:VirtualizedContainerService.HintSize="843.333333333333,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Ascending" OutputDataTable="[final_DT]" SortOrder="Ascending" />
+                              <ui:SortDataTable ColumnIndex="{x:Null}" DataColumn="{x:Null}" ColumnName="Ratings" DataTable="[final_DT]" DisplayName="Descending order - Ratings" sap:VirtualizedContainerService.HintSize="843.333333333333,22" sap2010:WorkflowViewState.IdRef="SortDataTable_1" Order="Decending" OutputDataTable="[final_DT]" SortOrder="Descending" />
                               <ui:WriteRange AddHeaders="True" DataTable="[final_DT]" DisplayName="Writing List Data" sap:VirtualizedContainerService.HintSize="843.333333333333,114.666666666667" sap2010:WorkflowViewState.IdRef="WriteRange_2" SheetName="[item.ToString]" StartingCell="A1" WorkbookPath="[Directory.GetCurrentDirectory + &quot;\Amazon_Data.xlsx&quot;]" />
+                              <Assign sap:VirtualizedContainerService.HintSize="843.333333333333,62" sap2010:WorkflowViewState.IdRef="Assign_3">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="sd:DataTable">[final_DT]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="sd:DataTable">[Nothing]</InArgument>
+                                </Assign.Value>
+                              </Assign>
                             </Sequence>
                           </ActivityAction>
                         </ui:BrowserScope.Body>
@@ -412,9 +424,7 @@
     <ui:SendMail Bcc="{x:Null}" Cc="{x:Null}" MailMessage="{x:Null}" Name="{x:Null}" TimeoutMS="{x:Null}" Body="Q4 Assignment" DisplayName="Send SMTP Mail Message" Email="uipath.testsuite@gmail.com" EnableSSL="True" From="uipath.testsuite@gmail.com" sap:VirtualizedContainerService.HintSize="1116,149.333333333333" sap2010:WorkflowViewState.IdRef="SendMail_1" IsBodyHtml="False" Password="Uipath@13" Port="465" SecureConnection="Auto" Server="smtp.gmail.com" Subject="Q4 Assignment" To="uipath.test.suite.demo@gmail.com">
       <ui:SendMail.Files>
         <scg:List x:TypeArguments="InArgument(x:String)" Capacity="4">
-          <InArgument x:TypeArguments="x:String">
-            <mva:VisualBasicValue x:TypeArguments="x:String" ExpressionText="Directory.GetCurrentDirectory + &quot;\Amazon_Data.xlsx&quot;" />
-          </InArgument>
+          <InArgument x:TypeArguments="x:String">[Directory.GetCurrentDirectory + "\Amazon_Data.xlsx"]</InArgument>
         </scg:List>
       </ui:SendMail.Files>
     </ui:SendMail>

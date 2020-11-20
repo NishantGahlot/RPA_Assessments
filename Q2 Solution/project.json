@@ -1,6 +1,6 @@
 {
   "name": "Q2 Solution",
-  "description": "Q2 Solution",
+  "description": "Q2_Solution",
   "main": "Main.xaml",
   "dependencies": {
     "UiPath.Excel.Activities": "[2.9.3]",
